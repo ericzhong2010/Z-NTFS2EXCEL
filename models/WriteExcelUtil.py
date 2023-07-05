@@ -94,6 +94,7 @@ class WriteExcelUtil:
             header_cell.fill = header_style['fill']
             header_cell.font = header_style['font']
             self.sheet.column_dimensions[col_letter].width = header_width[col_letter]
+        # 写入式样
         self.table_format_border(self.sheet, 1, self.sheet.max_row, 1, self.sheet.max_column)
 
 
@@ -105,9 +106,6 @@ class WriteExcelUtil:
         # 写入式样
         # (sheet, 开始行, 结束行, 开始列, 结束列)
         self.table_format_border(self.sheet, 2, self.sheet.max_row, 1, self.sheet.max_column)
-
-        # 调整列宽
-
 
         # 保存 Excel 文件
         computerName = os.environ.get('computername')
